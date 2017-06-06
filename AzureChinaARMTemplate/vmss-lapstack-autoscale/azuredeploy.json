@@ -303,9 +303,9 @@
                   "autoUpgradeMinorVersion": false,
                   "settings": {
                     "fileUris": [
-                      "https://raw.githubusercontent.com/kingliantop/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/install_lap.sh",
-                      "https://raw.githubusercontent.com/kingliantop/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/index.php",
-                      "https://raw.githubusercontent.com/kingliantop/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/do_work.php"
+                      "https://raw.githubusercontent.com/catwarrior/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/install_lap.sh",
+                      "https://raw.githubusercontent.com/catwarrior/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/index.php",
+                      "https://raw.githubusercontent.com/catwarrior/azurelabs/master/AzureChinaARMTemplate/vmss-lapstack-autoscale/do_work.php"
                     ],
                     "commandToExecute": "bash install_lap.sh"
                   }
@@ -326,7 +326,7 @@
                     "storageAccountName": "[variables('diagnosticsStorageAccountName')]",
                     "storageAccountKey": "[listkeys(variables('accountid'), variables('storageApiVersion')).key1]",
                     "storageAccountEndPoint": "https://core.chinacloudapi.cn",
-                    "endpoint": "table.core.chinacloudapi.cn"
+                    "endpoint": "table.core.chinacloudapi.cn"
                   }
                 }
               }
@@ -366,12 +366,12 @@
                   "timeWindow": "PT5M",
                   "timeAggregation": "Average",
                   "operator": "GreaterThan",
-                  "threshold": 60.0
+                  "threshold": 40.0
                 },
                 "scaleAction": {
                   "direction": "Increase",
                   "type": "ChangeCount",
-                  "value": "1",
+                  "value": "2",
                   "cooldown": "PT1M"
                 }
               },
@@ -382,10 +382,10 @@
                   "metricResourceUri": "[concat('/subscriptions/',subscription().subscriptionId, '/resourceGroups/',  resourceGroup().name, '/providers/Microsoft.Compute/virtualMachineScaleSets/', variables('namingInfix'))]",
                   "timeGrain": "PT1M",
                   "statistic": "Average",
-                  "timeWindow": "PT5M",
+                  "timeWindow": "PT3M",
                   "timeAggregation": "Average",
                   "operator": "LessThan",
-                  "threshold": 50.0
+                  "threshold": 30.0
                 },
                 "scaleAction": {
                   "direction": "Decrease",
