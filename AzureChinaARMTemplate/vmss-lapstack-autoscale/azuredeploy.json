@@ -288,7 +288,7 @@
                   "metricResourceUri": "[concat('/subscriptions/',subscription().subscriptionId, '/resourceGroups/',  resourceGroup().name, '/providers/Microsoft.Compute/virtualMachineScaleSets/', variables('namingInfix'))]",
                   "timeGrain": "PT1M",
                   "statistic": "Average",
-                  "timeWindow": "PT3M",
+                  "timeWindow": "PT5M",
                   "timeAggregation": "Average",
                   "operator": "LessThan",
                   "threshold": 30.0
