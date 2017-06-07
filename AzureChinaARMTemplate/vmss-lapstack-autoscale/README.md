@@ -1,0 +1,2 @@
+subnetResourceId:
+/subscriptions/96e96992-4c36-4b58-a68f-ecbfb1f1b79e/resourcegroups/xmbafcmcnbeinfvnt001rg/providers/Microsoft.Network/virtualNetworks/XMBAFCMCNINFVNT001RG/subnets/XMBAFCMCNINFS03DB
